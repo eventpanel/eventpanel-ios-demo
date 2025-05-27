@@ -1,0 +1,72 @@
+{
+  "categories" : [
+    {
+      "id" : "5b9f8ec7-765b-489e-a38f-b5d58d091dc4",
+      "name" : "Profile Screen"
+    }
+  ],
+  "custom_types" : [
+    {
+      "data_type" : "STRING",
+      "name" : "Origin",
+      "type" : "enum",
+      "values" : [
+        "Facebook",
+        "Insta"
+      ]
+    }
+  ],
+  "events" : [
+    {
+      "category_ids" : [
+
+      ],
+      "description" : "",
+      "id" : "7MJ5DRg_a7xrf8ZzeKmDb",
+      "name" : "Onboarding Screen Shown",
+      "properties" : [
+        {
+          "data_type" : "Origin",
+          "description" : "",
+          "id" : "ad30178e-90e7-4cbb-99d8-865c8edc327b",
+          "name" : "origin",
+          "required" : false
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "5b9f8ec7-765b-489e-a38f-b5d58d091dc4"
+      ],
+      "description" : "",
+      "id" : "akn-KX7E0Of8d2L_PLBbW",
+      "name" : "Profile Screen Shown"
+    },
+    {
+      "category_ids" : [
+
+      ],
+      "description" : "The user sees the full screen loading indicator",
+      "id" : "iarZdDsKOfAmxMN3rfTtd",
+      "name" : "Loading Screen Shown",
+      "properties" : [
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "1026f46e-b130-41e5-8c70-f1b9bf1b74f7",
+          "name" : "city_id",
+          "required" : false
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "5b9f8ec7-765b-489e-a38f-b5d58d091dc4"
+      ],
+      "description" : "Screen is fully closed",
+      "id" : "Z0EhrWP91qyabKCziBJBQ",
+      "name" : "Profile Screen Closed"
+    }
+  ],
+  "workspace" : "test"
+}
