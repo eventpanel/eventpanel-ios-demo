@@ -1,6 +1,7 @@
 {
   "categories" : [
     {
+      "description" : "A screen with user data",
       "id" : "5b9f8ec7-765b-489e-a38f-b5d58d091dc4",
       "name" : "Profile Screen"
     }
@@ -52,7 +53,7 @@
       "properties" : [
         {
           "data_type" : "STRING",
-          "description" : "",
+          "description" : "The id of the city",
           "id" : "1026f46e-b130-41e5-8c70-f1b9bf1b74f7",
           "name" : "city_id",
           "required" : false

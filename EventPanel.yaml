@@ -1,14 +1,16 @@
 language: swift
 plugin:
   swiftgen:
-    generatedEventsPath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     documentation: true
-    namespace: AnalyticsEvents
+    generatedEventsPath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     eventTypeName: AnalyticsEvent
+    namespace: AnalyticsEvents
 events:
 - id: 7MJ5DRg_a7xrf8ZzeKmDb
   version: 3
 - id: iarZdDsKOfAmxMN3rfTtd
   version: 4
 - id: akn-KX7E0Of8d2L_PLBbW
+  version: 1
 - id: Z0EhrWP91qyabKCziBJBQ
+  version: 1
