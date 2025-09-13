@@ -22,7 +22,6 @@ internal enum AnalyticsEvents {
       )
     }
   }
-
   internal static func onboardingScreenShown(  
     origin: Origin?
   ) -> AnalyticsEvent {

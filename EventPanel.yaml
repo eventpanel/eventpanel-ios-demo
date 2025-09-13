@@ -1,16 +1,17 @@
-language: swift
+workspaceId: c419df84-8b37-4f8d-b4cf-7d2a2698a405
+source: iOS
 plugin:
   swiftgen:
-    documentation: true
     generatedEventsPath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     eventTypeName: AnalyticsEvent
+    documentation: true
     namespace: AnalyticsEvents
 events:
-- id: 7MJ5DRg_a7xrf8ZzeKmDb
-  version: 3
-- id: iarZdDsKOfAmxMN3rfTtd
-  version: 4
-- id: akn-KX7E0Of8d2L_PLBbW
-  version: 1
-- id: Z0EhrWP91qyabKCziBJBQ
-  version: 1
+  - id: 7MJ5DRg_a7xrf8ZzeKmDb
+    version: 3
+  - id: iarZdDsKOfAmxMN3rfTtd
+    version: 4
+  - id: akn-KX7E0Of8d2L_PLBbW
+    version: 1
+  - id: Z0EhrWP91qyabKCziBJBQ
+    version: 1

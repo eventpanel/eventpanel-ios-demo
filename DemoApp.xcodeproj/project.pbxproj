@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E66FB072E72A0E70056CAA8 /* EventPanel.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = EventPanel.yaml; sourceTree = "<group>"; };
 		0E9A42E92DD5132900597CAE /* GeneratedAnalyticsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedAnalyticsEvents.swift; sourceTree = "<group>"; };
 		390536BB8F13D330B4F1D7AB /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8982FEA83CEA55C5718001 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		E00CD2792A435DDF005C9EDC = {
 			isa = PBXGroup;
 			children = (
+				0E66FB072E72A0E70056CAA8 /* EventPanel.yaml */,
 				E00CD2842A435DDF005C9EDC /* DemoApp */,
 				E00CD2832A435DDF005C9EDC /* Products */,
 				182B4395699561616BFCB6F4 /* Pods */,
@@ -116,7 +118,7 @@
 			buildConfigurationList = E00CD2902A435DE0005C9EDC /* Build configuration list for PBXNativeTarget "DemoApp" */;
 			buildPhases = (
 				6BCFE64DA0429BEBBB85EF05 /* [CP] Check Pods Manifest.lock */,
-				E00CD2932A435F15005C9EDC /* Generate analytics events */,
+				0EA5FA822E754EEC0082F727 /* GenerateAnalytics */,
 				E00CD27E2A435DDF005C9EDC /* Sources */,
 				E00CD27F2A435DDF005C9EDC /* Frameworks */,
 				E00CD2802A435DDF005C9EDC /* Resources */,
@@ -196,6 +198,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		0EA5FA822E754EEC0082F727 /* GenerateAnalytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/EventPanel.yaml",
+			);
+			name = GenerateAnalytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/DemoApp/Analytics/GeneratedAnalyticsEvents.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Try to find eventpanel command\nif command -v eventpanel >/dev/null 2>&1; then\n    eventpanel generate\nelif [ -f \"/opt/homebrew/bin/eventpanel\" ]; then\n    /opt/homebrew/bin/eventpanel generate\nelif [ -f \"/usr/local/bin/eventpanel\" ]; then\n    /usr/local/bin/eventpanel generate\nelse\n    echo \"Warning: eventpanel command not found. Please install EventPanel CLI:\"\n    echo \"brew tap eventpanel/eventpanel && brew install eventpanel\"\n    exit 1\nfi\n";
+		};
 		6BCFE64DA0429BEBBB85EF05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,27 +239,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		E00CD2932A435F15005C9EDC /* Generate analytics events */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PROJECT_DIR}/${PROJECT_NAME}/Analytics/WorkspaceScheme.json",
-				"${PROJECT_DIR}/${PROJECT_NAME}/event-panel-template.stencil",
-			);
-			name = "Generate analytics events";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${PROJECT_DIR}/${PROJECT_NAME}/Analytics/GeneratedAnalyticsEvents.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# eventpanel-dev generate\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
