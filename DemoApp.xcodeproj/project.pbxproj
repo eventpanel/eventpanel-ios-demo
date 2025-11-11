@@ -216,7 +216,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Try to find eventpanel command\nif command -v eventpanel >/dev/null 2>&1; then\n    eventpanel generate\nelif [ -f \"/opt/homebrew/bin/eventpanel\" ]; then\n    /opt/homebrew/bin/eventpanel generate\nelif [ -f \"/usr/local/bin/eventpanel\" ]; then\n    /usr/local/bin/eventpanel generate\nelse\n    echo \"Warning: eventpanel command not found. Please install EventPanel CLI:\"\n    echo \"brew tap eventpanel/eventpanel && brew install eventpanel\"\n    exit 1\nfi\n";
+			shellScript = "# Try to find eventpanel command\nif command -v eventpanel >/dev/null 2>&1; then\n    eventpanel generate\nelse\n    echo \"Warning: eventpanel command not found. Please install EventPanel CLI:\"\n    echo \"brew tap eventpanel/eventpanel && brew install eventpanel\"\n    exit 1\nfi\n";
 		};
 		6BCFE64DA0429BEBBB85EF05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
