@@ -207,6 +207,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/EventPanel.yaml",
+				"$(SRCROOT)/DemoApp/Analytics/GeneratedAnalyticsEvents.swift",
 			);
 			name = GenerateAnalytics;
 			outputFileListPaths = (
@@ -216,7 +217,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Try to find eventpanel command\nif command -v eventpanel >/dev/null 2>&1; then\n    eventpanel generate\nelse\n    echo \"Warning: eventpanel command not found. Please install EventPanel CLI:\"\n    echo \"brew tap eventpanel/eventpanel && brew install eventpanel\"\n    exit 1\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v eventpanel generate >/dev/null 2>&1\nthen\n    eventpanel generate\nelse\n    echo \"Warning: eventpanel command not found. Please install EventPanel CLI:\"\n    echo \"brew tap eventpanel/eventpanel && brew install eventpanel\"\n    exit 1\nfi\n";
 		};
 		6BCFE64DA0429BEBBB85EF05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
