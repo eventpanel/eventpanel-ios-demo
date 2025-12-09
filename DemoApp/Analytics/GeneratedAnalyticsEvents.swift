@@ -55,11 +55,11 @@ extension AnalyticsEvents {
 }
 
 private extension Dictionary where Value == Any? {
-    /// Returns dictionary with filtered out `nil` and `NSNull` values
-    func byExcludingNilValues() -> [Key: Any] {
-        return compactMapValues { value -> Any? in
-            value is NSNull ? nil : value
-        }
+  /// Returns dictionary with filtered out `nil` and `NSNull` values
+  func byExcludingNilValues() -> [Key: Any] {
+    return compactMapValues { value -> Any? in
+      value is NSNull ? nil : value
     }
-} 
+  }
+}
 // swiftlint:enable all

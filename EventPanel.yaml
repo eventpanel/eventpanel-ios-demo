@@ -2,9 +2,10 @@ workspaceId: c419df84-8b37-4f8d-b4cf-7d2a2698a405
 source: iOS
 plugin:
   swiftgen:
-    generatedEventsPath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
+    outputFilePath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     eventTypeName: AnalyticsEvent
     documentation: true
+    shouldGenerateType: false
     namespace: AnalyticsEvents
 events:
   - id: 7MJ5DRg_a7xrf8ZzeKmDb
