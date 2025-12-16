@@ -8,24 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		0E9A42EA2DD5132900597CAE /* GeneratedAnalyticsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A42E92DD5132900597CAE /* GeneratedAnalyticsEvents.swift */; };
+		5DAD289C4EEF4D4A9B34D9DE7300CBE1 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD289C4EEF4D4A9B34D9DE7300CBE0 /* AnalyticsService.swift */; };
+		A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D5 /* Colors.swift */; };
+		B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E6 /* EventCardView.swift */; };
+		C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8 /* EventButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F7 /* EventButtonView.swift */; };
+		D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9 /* EventConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A8 /* EventConsoleView.swift */; };
+		E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9B1 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0 /* BackgroundGradientView.swift */; };
+		F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C2 /* FloatingConsoleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1 /* FloatingConsoleButton.swift */; };
+		A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2 /* HeaderView.swift */; };
+		B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E4 /* ConsoleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3 /* ConsoleModalView.swift */; };
+		C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F5 /* ParameterTypeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F4 /* ParameterTypeRow.swift */; };
 		E00CD2862A435DDF005C9EDC /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CD2852A435DDF005C9EDC /* DemoAppApp.swift */; };
 		E00CD2882A435DDF005C9EDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CD2872A435DDF005C9EDC /* ContentView.swift */; };
 		E00CD28A2A435DE0005C9EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00CD2892A435DE0005C9EDC /* Assets.xcassets */; };
 		E00CD28D2A435DE0005C9EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00CD28C2A435DE0005C9EDC /* Preview Assets.xcassets */; };
 		E00CD2982A4362B4005C9EDC /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CD2972A4362B4005C9EDC /* AnalyticsEvent.swift */; };
-		E050FC862A607D9900042BDA /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050FC852A607D9900042BDA /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E66FB072E72A0E70056CAA8 /* EventPanel.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = EventPanel.yaml; sourceTree = "<group>"; };
 		0E9A42E92DD5132900597CAE /* GeneratedAnalyticsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedAnalyticsEvents.swift; sourceTree = "<group>"; };
+		5DAD289C4EEF4D4A9B34D9DE7300CBE0 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E6 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F7 /* EventButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventButtonView.swift; sourceTree = "<group>"; };
+		D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A8 /* EventConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventConsoleView.swift; sourceTree = "<group>"; };
+		E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
+		F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1 /* FloatingConsoleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingConsoleButton.swift; sourceTree = "<group>"; };
+		A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3 /* ConsoleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleModalView.swift; sourceTree = "<group>"; };
+		C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F4 /* ParameterTypeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterTypeRow.swift; sourceTree = "<group>"; };
 		E00CD2822A435DDF005C9EDC /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00CD2852A435DDF005C9EDC /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
 		E00CD2872A435DDF005C9EDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E00CD2892A435DE0005C9EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E00CD28C2A435DE0005C9EDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E00CD2972A4362B4005C9EDC /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
-		E050FC852A607D9900042BDA /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				E00CD2942A43600B005C9EDC /* Analytics */,
+				E00CD2972A43600B005C9EDC /* Components */,
+				E00CD2962A43600B005C9EDC /* Services */,
+				E00CD2982A43600B005C9EDC /* Theme */,
 				E00CD2852A435DDF005C9EDC /* DemoAppApp.swift */,
 				E00CD2872A435DDF005C9EDC /* ContentView.swift */,
-				E050FC852A607D9900042BDA /* ContentViewModel.swift */,
 				E00CD2892A435DE0005C9EDC /* Assets.xcassets */,
 				E00CD28B2A435DE0005C9EDC /* Preview Content */,
 			);
@@ -84,6 +104,37 @@
 				E00CD2972A4362B4005C9EDC /* AnalyticsEvent.swift */,
 			);
 			path = Analytics;
+			sourceTree = "<group>";
+		};
+		E00CD2962A43600B005C9EDC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5DAD289C4EEF4D4A9B34D9DE7300CBE0 /* AnalyticsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E00CD2972A43600B005C9EDC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0 /* BackgroundGradientView.swift */,
+				B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3 /* ConsoleModalView.swift */,
+				B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E6 /* EventCardView.swift */,
+				C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F7 /* EventButtonView.swift */,
+				D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A8 /* EventConsoleView.swift */,
+				F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1 /* FloatingConsoleButton.swift */,
+				A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2 /* HeaderView.swift */,
+				C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F4 /* ParameterTypeRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E00CD2982A43600B005C9EDC /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D5 /* Colors.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +236,16 @@
 				0E9A42EA2DD5132900597CAE /* GeneratedAnalyticsEvents.swift in Sources */,
 				E00CD2982A4362B4005C9EDC /* AnalyticsEvent.swift in Sources */,
 				E00CD2862A435DDF005C9EDC /* DemoAppApp.swift in Sources */,
-				E050FC862A607D9900042BDA /* ContentViewModel.swift in Sources */,
+				5DAD289C4EEF4D4A9B34D9DE7300CBE1 /* AnalyticsService.swift in Sources */,
+				A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6 /* Colors.swift in Sources */,
+				B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7 /* EventCardView.swift in Sources */,
+				C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8 /* EventButtonView.swift in Sources */,
+				D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9 /* EventConsoleView.swift in Sources */,
+				E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9B1 /* BackgroundGradientView.swift in Sources */,
+				F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C2 /* FloatingConsoleButton.swift in Sources */,
+				A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D3 /* HeaderView.swift in Sources */,
+				B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E4 /* ConsoleModalView.swift in Sources */,
+				C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F5 /* ParameterTypeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,11 +377,12 @@
 				DEVELOPMENT_TEAM = 448KR587GY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = EventPanel;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,11 +407,12 @@
 				DEVELOPMENT_TEAM = 448KR587GY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = EventPanel;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

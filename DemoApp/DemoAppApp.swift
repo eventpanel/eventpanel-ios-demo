@@ -1,8 +1,3 @@
-//
-//  DemoAppApp.swift
-//  DemoApp
-//
-
 import SwiftUI
 
 @main
