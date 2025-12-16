@@ -2,6 +2,11 @@
 
 A demonstration iOS app showcasing EventPanel CLI integration for type-safe analytics event code generation.
 
+<p align="center">
+  <img src="screenshots/screenshot_1.png" width="300" alt="Screenshot 1">
+  <img src="screenshots/screenshot_2.png" width="300" alt="Screenshot 2">
+</p>
+
 ## Overview
 
 This demo app demonstrates how to integrate EventPanel CLI into an iOS project to generate type-safe analytics events from YAML configuration files.
@@ -17,20 +22,23 @@ This demo app demonstrates how to integrate EventPanel CLI into an iOS project t
 ```
 DemoApp/
 ├── Analytics/
-│   ├── AnalyticsEvent.swift          # Base analytics event protocol
-│   └── GeneratedAnalyticsEvents.swift # Generated event code
-├── ContentView.swift                 # Main SwiftUI view
-├── ContentViewModel.swift           # View model with analytics
-└── DemoAppApp.swift                 # App entry point
+│   └── GeneratedAnalyticsEvents.swift  # Generated event code
+├── Components/                         # Reusable UI components
+├── Services/
+│   └── AnalyticsService.swift          # Analytics tracking service
+├── Theme/
+│   └── Colors.swift                    # App color definitions
+├── ContentView.swift                   # Main SwiftUI view
+└── DemoAppApp.swift                    # App entry point
 ```
 
 ## Generated Analytics Events
 
 The app includes several example analytics events:
 
-- **Profile Screen Events**: `profileScreenShown()`, `profileScreenClosed()`
-- **Onboarding Events**: `onboardingScreenShown(origin:)` with custom `Origin` enum
-- **Loading Events**: `loadingScreenShown(cityId:)` with optional parameters
+- **Product Details Events**: `productViewed()`, `addToCartTapped()`, `imageGallerySwiped()`, `checkoutStarted()`
+- **Checkout Events**: `checkoutCompleted()`, `paymentMethodSelected()` with custom `PaymentMethod` enum
+- **Home Events**: `homeScreenViewed()`, `homeBannerTapped()`, `quickActionTapped()` with custom `EntrySource` enum
 
 ## Usage
 
@@ -54,38 +62,53 @@ The app includes several example analytics events:
 The app uses `EventPanel.yaml` to define analytics events:
 
 ```yaml
-language: swift
+workspaceId: 98996b91-79c2-4bfa-9339-f559615cf0d2
+source: iOS
 plugin:
   swiftgen:
-    documentation: true
-    generatedEventsPath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
+    shouldGenerateType: true
+    outputFilePath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     eventTypeName: AnalyticsEvent
     namespace: AnalyticsEvents
+    documentation: true
 events:
-  - id: 7MJ5DRg_a7xrf8ZzeKmDb  # Onboarding Screen Shown
-    version: 3
-  - id: iarZdDsKOfAmxMN3rfTtd  # Loading Screen Shown
-    version: 4
-  - id: akn-KX7E0Of8d2L_PLBbW  # Profile Screen Shown
-    version: 1
-  - id: Z0EhrWP91qyabKCziBJBQ  # Profile Screen Closed
-    version: 1
+- id: vJYxYV2tXEZlGh3I9iB_I  # Product Viewed
+- id: 5oYkQpzYj-47TPVna3KtH  # Add To Cart Tapped
+- id: gEUfBDQlXGAMcOgYzQ98_  # Image Gallery Swiped
+- id: 4KYCSy_Dxo9im1342lj-q  # Checkout Started
+- id: c0A7K5TETHfyqBmlNgxzX  # Checkout Completed
+- id: ReeBFYaGNMjcSAg5AWNZ6  # Payment Method Selected
+- id: 7x_C_nhcvdKoJezy8LRfq  # Home Screen Viewed
+- id: CxjfQzKJoTblMNS6Dre16  # Home Banner Tapped
+- id: V3IyudkmOanyBk_P6r7wd  # Quick Action Tapped
+  version: 2
 ```
 
 ## Example Usage
 
 ```swift
-// Track a profile screen view
-let event = AnalyticsEvents.ProfileScreen.profileScreenShown()
-analytics.track(event)
+// Track a product view
+let event = AnalyticsEvents.ProductDetails.productViewed(
+    productId: "SKU-123",
+    productPrice: "29.99"
+)
+AnalyticsService.shared.track(event)
 
-// Track onboarding with origin
-let onboardingEvent = AnalyticsEvents.onboardingScreenShown(origin: .facebook)
-analytics.track(onboardingEvent)
+// Track home screen with entry source enum
+let homeEvent = AnalyticsEvents.Home.homeScreenViewed(
+    activeExperiments: "exp_checkout_v2",
+    screenLoadTimeMs: 120.5,
+    entrySource: .facebook
+)
+AnalyticsService.shared.track(homeEvent)
 
-// Track loading with city ID
-let loadingEvent = AnalyticsEvents.loadingScreenShown(cityId: "NYC")
-analytics.track(loadingEvent)
+// Track payment method selection
+let paymentEvent = AnalyticsEvents.Checkout.paymentMethodSelected(
+    paymentMetadata: [["provider": "stripe"]],
+    paymentMethod: .card,
+    supportedMethods: ["card", "cash"]
+)
+AnalyticsService.shared.track(paymentEvent)
 ```
 
 ## Learn More
