@@ -1,18 +1,20 @@
-workspaceId: c419df84-8b37-4f8d-b4cf-7d2a2698a405
+workspaceId: 98996b91-79c2-4bfa-9339-f559615cf0d2
 source: iOS
 plugin:
   swiftgen:
+    shouldGenerateType: true
     outputFilePath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     eventTypeName: AnalyticsEvent
-    documentation: true
-    shouldGenerateType: false
     namespace: AnalyticsEvents
+    documentation: true
 events:
-  - id: 7MJ5DRg_a7xrf8ZzeKmDb
-    version: 3
-  - id: iarZdDsKOfAmxMN3rfTtd
-    version: 4
-  - id: akn-KX7E0Of8d2L_PLBbW
-    version: 1
-  - id: Z0EhrWP91qyabKCziBJBQ
-    version: 1
+- id: vJYxYV2tXEZlGh3I9iB_I
+- id: 5oYkQpzYj-47TPVna3KtH
+- id: gEUfBDQlXGAMcOgYzQ98_
+- id: 4KYCSy_Dxo9im1342lj-q
+- id: c0A7K5TETHfyqBmlNgxzX
+- id: ReeBFYaGNMjcSAg5AWNZ6
+- id: 7x_C_nhcvdKoJezy8LRfq
+- id: CxjfQzKJoTblMNS6Dre16
+- id: V3IyudkmOanyBk_P6r7wd
+  version: 2
