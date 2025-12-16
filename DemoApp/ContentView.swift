@@ -1,8 +1,12 @@
 import SwiftUI
+import SafariServices
 
 struct ContentView: View {
     @StateObject private var analyticsService = AnalyticsService.shared
     @State private var showConsole = false
+    @State private var showSourceCode = false
+    
+    private let sourceCodeURL = URL(string: "https://github.com/eventpanel/eventpanel-ios-demo/blob/main/DemoApp/Analytics/GeneratedAnalyticsEvents.swift")!
     
     var body: some View {
         ZStack {
@@ -18,6 +22,26 @@ struct ContentView: View {
                         checkoutCard
                     }
                     .padding(.horizontal)
+                    
+                    // GitHub Source Code Link
+                    Button {
+                        showSourceCode = true
+                    } label: {
+                        HStack(spacing: 8) {
+                            Image(systemName: "chevron.left.forwardslash.chevron.right")
+                                .font(.system(size: 14, weight: .medium))
+                            Text("View Analytics Source Code")
+                                .font(.system(size: 14, weight: .medium))
+                            Image(systemName: "arrow.up.right")
+                                .font(.system(size: 12, weight: .medium))
+                        }
+                        .foregroundColor(.white.opacity(0.7))
+                        .padding(.vertical, 12)
+                        .padding(.horizontal, 16)
+                        .background(Color.white.opacity(0.1))
+                        .cornerRadius(20)
+                    }
+                    .padding(.top, 8)
                     
                     Spacer(minLength: 60)
                 }
@@ -42,6 +66,9 @@ struct ContentView: View {
                 onClear: { withAnimation { analyticsService.clearHistory() } },
                 onClose: { showConsole = false }
             )
+        }
+        .sheet(isPresented: $showSourceCode) {
+            SafariView(url: sourceCodeURL)
         }
     }
     
@@ -136,6 +163,18 @@ struct ContentView: View {
             }
         }
     }
+}
+
+// MARK: - Safari WebView
+
+struct SafariView: UIViewControllerRepresentable {
+    let url: URL
+    
+    func makeUIViewController(context: Context) -> SFSafariViewController {
+        SFSafariViewController(url: url)
+    }
+    
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {}
 }
 
 #Preview {
