@@ -13,14 +13,14 @@ struct ContentView: View {
                     HeaderView()
                     
                     VStack(spacing: 16) {
-                        onboardingCard
-                        profileCard
-                        loadingCard
+                        homeCard
+                        productDetailsCard
+                        checkoutCard
                         parameterTypesCard
                     }
                     .padding(.horizontal)
                     
-                    Spacer(minLength: 40)
+                    Spacer(minLength: 100)
                 }
             }
             
@@ -46,41 +46,94 @@ struct ContentView: View {
         }
     }
     
-    private var onboardingCard: some View {
-        EventCardView(title: "Onboarding Events", icon: "🚀", variant: .cyan) {
-            EventButtonView(label: "Screen Shown (Facebook)", badges: ["origin"], variant: .cyan) {
-                analyticsService.track(AnalyticsEvents.onboardingScreenShown(origin: .facebook))
+    private var homeCard: some View {
+        EventCardView(title: "Home Events", icon: "🏠", variant: .cyan) {
+            EventButtonView(label: "Screen Viewed (Google)", badges: ["entry_source"], variant: .cyan) {
+                analyticsService.track(AnalyticsEvents.Home.homeScreenViewed(
+                    activeExperiments: "exp_123",
+                    screenLoadTimeMs: 245.5,
+                    entrySource: .google
+                ))
             }
-            EventButtonView(label: "Screen Shown (Insta)", badges: ["origin"], variant: .cyan) {
-                analyticsService.track(AnalyticsEvents.onboardingScreenShown(origin: .insta))
+            EventButtonView(label: "Screen Viewed (Facebook)", badges: ["entry_source"], variant: .cyan) {
+                analyticsService.track(AnalyticsEvents.Home.homeScreenViewed(
+                    activeExperiments: nil,
+                    screenLoadTimeMs: 180.0,
+                    entrySource: .facebook
+                ))
             }
-            EventButtonView(label: "Screen Shown (No Origin)", badges: [], variant: .cyan) {
-                analyticsService.track(AnalyticsEvents.onboardingScreenShown(origin: nil))
+            EventButtonView(label: "Banner Tapped", badges: ["banner_id", "position"], variant: .cyan) {
+                analyticsService.track(AnalyticsEvents.Home.homeBannerTapped(
+                    bannerMetadata: ["campaign": "summer_sale", "variant": "A"],
+                    bannerPosition: 1,
+                    bannerId: "banner_001"
+                ))
+            }
+            EventButtonView(label: "Quick Action", badges: ["actions[]"], variant: .cyan) {
+                analyticsService.track(AnalyticsEvents.Home.quickActionTapped(
+                    availableActions: ["search", "cart", "profile"],
+                    actionType: "search",
+                    isCustomized: true
+                ))
             }
         }
     }
     
-    private var profileCard: some View {
-        EventCardView(title: "Profile Events", icon: "👤", variant: .purple) {
-            EventButtonView(label: "Profile Screen Shown", badges: [], variant: .purple) {
-                analyticsService.track(AnalyticsEvents.ProfileScreen.profileScreenShown())
+    private var productDetailsCard: some View {
+        EventCardView(title: "Product Details", icon: "📦", variant: .purple) {
+            EventButtonView(label: "Product Viewed", badges: ["product_id", "price"], variant: .purple) {
+                analyticsService.track(AnalyticsEvents.ProductDetails.productViewed(
+                    productId: "SKU-12345",
+                    productPrice: "$99.99"
+                ))
             }
-            EventButtonView(label: "Profile Screen Closed", badges: [], variant: .purple) {
-                analyticsService.track(AnalyticsEvents.ProfileScreen.profileScreenClosed())
+            EventButtonView(label: "Add to Cart", badges: ["options[]"], variant: .purple) {
+                analyticsService.track(AnalyticsEvents.ProductDetails.addToCartTapped(
+                    productId: "SKU-12345",
+                    productPrice: "$99.99",
+                    selectedOptions: [1, 3, 5]
+                ))
+            }
+            EventButtonView(label: "Gallery Swiped", badges: ["index"], variant: .purple) {
+                analyticsService.track(AnalyticsEvents.ProductDetails.imageGallerySwiped(
+                    imageIndex: 2
+                ))
+            }
+            EventButtonView(label: "Checkout Started", badges: ["cart_items[]"], variant: .purple) {
+                analyticsService.track(AnalyticsEvents.ProductDetails.checkoutStarted(
+                    cartId: "cart_abc",
+                    cartValue: 199.98,
+                    cartItems: [
+                        ["id": "SKU-12345", "qty": 2],
+                        ["id": "SKU-67890", "qty": 1]
+                    ]
+                ))
             }
         }
     }
     
-    private var loadingCard: some View {
-        EventCardView(title: "Loading Events", icon: "⏳", variant: .green) {
-            EventButtonView(label: "Loading (Moscow)", badges: ["city_id"], variant: .green) {
-                analyticsService.track(AnalyticsEvents.loadingScreenShown(cityId: "Moscow-123"))
+    private var checkoutCard: some View {
+        EventCardView(title: "Checkout Events", icon: "💳", variant: .green) {
+            EventButtonView(label: "Payment (Card)", badges: ["payment_method"], variant: .green) {
+                analyticsService.track(AnalyticsEvents.Checkout.paymentMethodSelected(
+                    paymentMetadata: [["type": "visa", "last4": "4242"]],
+                    paymentMethod: .card,
+                    supportedMethods: ["card", "cash", "apple_pay"]
+                ))
             }
-            EventButtonView(label: "Loading (New York)", badges: ["city_id"], variant: .green) {
-                analyticsService.track(AnalyticsEvents.loadingScreenShown(cityId: "NYC-456"))
+            EventButtonView(label: "Payment (Cash)", badges: ["payment_method"], variant: .green) {
+                analyticsService.track(AnalyticsEvents.Checkout.paymentMethodSelected(
+                    paymentMetadata: [],
+                    paymentMethod: .cash,
+                    supportedMethods: ["card", "cash"]
+                ))
             }
-            EventButtonView(label: "Loading (No City)", badges: [], variant: .green) {
-                analyticsService.track(AnalyticsEvents.loadingScreenShown(cityId: nil))
+            EventButtonView(label: "Checkout Completed", badges: ["order_id"], variant: .green) {
+                analyticsService.track(AnalyticsEvents.Checkout.checkoutCompleted(
+                    totalAmount: 19998,
+                    orderSummary: "2 items",
+                    orderId: "ORD-2024-001"
+                ))
             }
         }
     }
@@ -88,9 +141,14 @@ struct ContentView: View {
     private var parameterTypesCard: some View {
         EventCardView(title: "Parameter Types", icon: "📋", variant: .orange) {
             VStack(alignment: .leading, spacing: 12) {
-                ParameterTypeRow(icon: "🔹", type: "Enum", example: "Origin: Facebook, Insta")
-                ParameterTypeRow(icon: "🔸", type: "Optional String", example: "cityId: String?")
-                ParameterTypeRow(icon: "⚪", type: "No Parameters", example: "profileScreenShown()")
+                ParameterTypeRow(icon: "🔷", type: "String", example: "productId: String")
+                ParameterTypeRow(icon: "🔢", type: "Int / Float", example: "imageIndex: Int")
+                ParameterTypeRow(icon: "✅", type: "Bool", example: "isCustomized: Bool?")
+                ParameterTypeRow(icon: "🎯", type: "Enum", example: "PaymentMethod, EntrySource")
+                ParameterTypeRow(icon: "📝", type: "[String]", example: "availableActions: [String]")
+                ParameterTypeRow(icon: "🔢", type: "[Int]", example: "selectedOptions: [Int]")
+                ParameterTypeRow(icon: "📦", type: "[String: Any]", example: "bannerMetadata")
+                ParameterTypeRow(icon: "📚", type: "[[String: Any]]", example: "cartItems, paymentMetadata")
             }
             .padding(.vertical, 4)
         }
