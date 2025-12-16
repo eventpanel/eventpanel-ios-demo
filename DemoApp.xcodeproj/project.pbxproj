@@ -14,7 +14,6 @@
 		B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E6 /* EventCardView.swift */; };
 		B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E4 /* ConsoleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3 /* ConsoleModalView.swift */; };
 		C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8 /* EventButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F7 /* EventButtonView.swift */; };
-		C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F5 /* ParameterTypeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F4 /* ParameterTypeRow.swift */; };
 		D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9 /* EventConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A8 /* EventConsoleView.swift */; };
 		E00CD2862A435DDF005C9EDC /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CD2852A435DDF005C9EDC /* DemoAppApp.swift */; };
 		E00CD2882A435DDF005C9EDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CD2872A435DDF005C9EDC /* ContentView.swift */; };
@@ -33,7 +32,6 @@
 		B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6E6 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
 		B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3 /* ConsoleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleModalView.swift; sourceTree = "<group>"; };
 		C3D4E5F6A7B8C9D0E1F2A3B4C5D6E7F7 /* EventButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventButtonView.swift; sourceTree = "<group>"; };
-		C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F4 /* ParameterTypeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterTypeRow.swift; sourceTree = "<group>"; };
 		D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A8 /* EventConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventConsoleView.swift; sourceTree = "<group>"; };
 		E00CD2822A435DDF005C9EDC /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00CD2852A435DDF005C9EDC /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				D4E5F6A7B8C9D0E1F2A3B4C5D6E7F8A8 /* EventConsoleView.swift */,
 				F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1 /* FloatingConsoleButton.swift */,
 				A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2 /* HeaderView.swift */,
-				C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F4 /* ParameterTypeRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -241,7 +238,6 @@
 				F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C2 /* FloatingConsoleButton.swift in Sources */,
 				A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D3 /* HeaderView.swift in Sources */,
 				B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2E4 /* ConsoleModalView.swift in Sources */,
-				C9D0E1F2A3B4C5D6E7F8A9B0C1D2E3F5 /* ParameterTypeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

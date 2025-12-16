@@ -16,11 +16,10 @@ struct ContentView: View {
                         homeCard
                         productDetailsCard
                         checkoutCard
-                        parameterTypesCard
                     }
                     .padding(.horizontal)
                     
-                    Spacer(minLength: 100)
+                    Spacer(minLength: 60)
                 }
             }
             
@@ -135,22 +134,6 @@ struct ContentView: View {
                     orderId: "ORD-2024-001"
                 ))
             }
-        }
-    }
-    
-    private var parameterTypesCard: some View {
-        EventCardView(title: "Parameter Types", icon: "📋", variant: .orange) {
-            VStack(alignment: .leading, spacing: 12) {
-                ParameterTypeRow(icon: "🔷", type: "String", example: "productId: String")
-                ParameterTypeRow(icon: "🔢", type: "Int / Float", example: "imageIndex: Int")
-                ParameterTypeRow(icon: "✅", type: "Bool", example: "isCustomized: Bool?")
-                ParameterTypeRow(icon: "🎯", type: "Enum", example: "PaymentMethod, EntrySource")
-                ParameterTypeRow(icon: "📝", type: "[String]", example: "availableActions: [String]")
-                ParameterTypeRow(icon: "🔢", type: "[Int]", example: "selectedOptions: [Int]")
-                ParameterTypeRow(icon: "📦", type: "[String: Any]", example: "bannerMetadata")
-                ParameterTypeRow(icon: "📚", type: "[[String: Any]]", example: "cartItems, paymentMetadata")
-            }
-            .padding(.vertical, 4)
         }
     }
 }
