@@ -1,0 +1,300 @@
+{
+  "categories" : [
+    {
+      "description" : "Tracks user behavior on product detail screens",
+      "id" : "eb79f655-6e75-45e3-92c3-b71a0185024f",
+      "name" : "Product Details"
+    },
+    {
+      "description" : "Monitors user progress and completion of checkout",
+      "id" : "ca2439a2-2045-4822-bc47-1c7c6ca052ea",
+      "name" : "Checkout"
+    },
+    {
+      "description" : "Measures user interaction with the home screen",
+      "id" : "13347e5a-30a4-4bb1-85b9-78a72eba27a9",
+      "name" : "Home"
+    }
+  ],
+  "custom_types" : [
+    {
+      "data_type" : "STRING",
+      "name" : "PaymentMethod",
+      "type" : "enum",
+      "values" : [
+        "cash",
+        "card"
+      ]
+    },
+    {
+      "data_type" : "STRING",
+      "name" : "EntrySource",
+      "type" : "enum",
+      "values" : [
+        "google",
+        "facebook"
+      ]
+    }
+  ],
+  "events" : [
+    {
+      "category_ids" : [
+        "eb79f655-6e75-45e3-92c3-b71a0185024f"
+      ],
+      "description" : "Triggered when a user adds a product to the cart",
+      "id" : "vJYxYV2tXEZlGh3I9iB_I",
+      "name" : "Add To Cart Tapped",
+      "properties" : [
+        {
+          "data_type" : "STRING",
+          "description" : "Unique product identifier",
+          "id" : "2fbc50db-e19e-436e-9a73-4322a4c9bf98",
+          "name" : "product_id",
+          "required" : true
+        },
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "c6cfcb21-25bd-4e1f-b371-771ea849f883",
+          "name" : "product_price",
+          "required" : true
+        },
+        {
+          "data_type" : "INTEGER_LIST",
+          "description" : "",
+          "id" : "f5cfd84e-2cc6-4295-bdd6-99f5c504b392",
+          "name" : "selected_options",
+          "required" : true
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "ca2439a2-2045-4822-bc47-1c7c6ca052ea"
+      ],
+      "description" : "Triggered when the purchase is successfully completed",
+      "id" : "5oYkQpzYj-47TPVna3KtH",
+      "name" : "Checkout Completed",
+      "properties" : [
+        {
+          "data_type" : "INTEGER",
+          "description" : "",
+          "id" : "3823937d-7906-4252-adc7-f5db6b449256",
+          "name" : "total_amount",
+          "required" : false
+        },
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "7ac74d3e-c904-4896-b8ad-0d04fd251f5d",
+          "name" : "order_summary",
+          "required" : false
+        },
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "b100d5ed-7b46-41e6-9aee-dbdeddf7b662",
+          "name" : "order_id",
+          "required" : false
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "eb79f655-6e75-45e3-92c3-b71a0185024f"
+      ],
+      "description" : "riggered when a user enters the checkout flow",
+      "id" : "gEUfBDQlXGAMcOgYzQ98_",
+      "name" : "Checkout Started",
+      "properties" : [
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "3fa59d2e-4479-4f90-9b4a-da193235048d",
+          "name" : "cart_id",
+          "required" : false
+        },
+        {
+          "data_type" : "FLOAT",
+          "description" : "",
+          "id" : "c246f82a-70c9-46a6-bd2d-fe10405d6d92",
+          "name" : "cart_value",
+          "required" : false
+        },
+        {
+          "data_type" : "OBJECT_LIST",
+          "description" : "",
+          "id" : "fd93e597-aca8-4a5d-925b-0329c146171b",
+          "name" : "cart_items",
+          "required" : false
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "13347e5a-30a4-4bb1-85b9-78a72eba27a9"
+      ],
+      "description" : "Triggered when a user taps a promotional banner",
+      "id" : "4KYCSy_Dxo9im1342lj-q",
+      "name" : "Home Banner Tapped",
+      "properties" : [
+        {
+          "data_type" : "OBJECT",
+          "description" : "Additional banner details (campaign, variant)",
+          "id" : "50678a7f-5831-420b-a3de-a462d5079d8b",
+          "name" : "banner_metadata",
+          "required" : true
+        },
+        {
+          "data_type" : "INTEGER",
+          "description" : "Position of the banner on the screen",
+          "id" : "ccd31ba5-63b4-41ee-8317-4d7f9ada86d6",
+          "name" : "banner_position",
+          "required" : true
+        },
+        {
+          "data_type" : "STRING",
+          "description" : "Unique identifier of the banner",
+          "id" : "3a586c70-1f9e-42ad-b775-f26b2c51774a",
+          "name" : "banner_id",
+          "required" : false
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "13347e5a-30a4-4bb1-85b9-78a72eba27a9"
+      ],
+      "description" : "Triggered when the home screen is displayed",
+      "id" : "c0A7K5TETHfyqBmlNgxzX",
+      "name" : "Home Screen Viewed",
+      "properties" : [
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "76f5231c-3a4f-4912-bcf1-bf91235360d9",
+          "name" : "active_experiments",
+          "required" : false
+        },
+        {
+          "data_type" : "FLOAT",
+          "description" : "Time taken to load the home screen",
+          "id" : "97cf45f3-05b5-4f1c-94d3-f507a0372152",
+          "name" : "screen_load_time_ms",
+          "required" : false
+        },
+        {
+          "data_type" : "EntrySource",
+          "description" : "Source the user came from",
+          "id" : "efd1c6ae-a73d-4fe9-ba6a-bf1bf640a60a",
+          "name" : "entry_source",
+          "required" : false
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "eb79f655-6e75-45e3-92c3-b71a0185024f"
+      ],
+      "description" : "Triggered when a user swipes through product images",
+      "id" : "ReeBFYaGNMjcSAg5AWNZ6",
+      "name" : "Image Gallery Swiped",
+      "properties" : [
+        {
+          "data_type" : "INTEGER",
+          "description" : "",
+          "id" : "f10ce775-0887-405d-a316-3ff6625d8271",
+          "name" : "image_index",
+          "required" : true
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "ca2439a2-2045-4822-bc47-1c7c6ca052ea"
+      ],
+      "description" : "Triggered when a user selects a payment method",
+      "id" : "7x_C_nhcvdKoJezy8LRfq",
+      "name" : "Payment Method Selected",
+      "properties" : [
+        {
+          "data_type" : "OBJECT_LIST",
+          "description" : "",
+          "id" : "08fe46a1-e5ee-4e78-904e-3dadfdbb0544",
+          "name" : "payment_metadata",
+          "required" : true
+        },
+        {
+          "data_type" : "PaymentMethod",
+          "description" : "",
+          "id" : "3795ce6b-4421-4277-976a-4d30e56092fe",
+          "name" : "payment_method",
+          "required" : true
+        },
+        {
+          "data_type" : "STRING_LIST",
+          "description" : "",
+          "id" : "acdaf625-5c74-4b43-b45d-137b51a3f70b",
+          "name" : "supported_methods",
+          "required" : true
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "eb79f655-6e75-45e3-92c3-b71a0185024f"
+      ],
+      "description" : "Triggered when a product detail screen is opened",
+      "id" : "CxjfQzKJoTblMNS6Dre16",
+      "name" : "Product Viewed",
+      "properties" : [
+        {
+          "data_type" : "STRING",
+          "description" : "Unique product identifier",
+          "id" : "2fbc50db-e19e-436e-9a73-4322a4c9bf98",
+          "name" : "product_id",
+          "required" : true
+        },
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "c6cfcb21-25bd-4e1f-b371-771ea849f883",
+          "name" : "product_price",
+          "required" : true
+        }
+      ]
+    },
+    {
+      "category_ids" : [
+        "13347e5a-30a4-4bb1-85b9-78a72eba27a9"
+      ],
+      "description" : "Triggered when a user taps a quick action shortcut",
+      "id" : "V3IyudkmOanyBk_P6r7wd",
+      "name" : "Quick Action Tapped",
+      "properties" : [
+        {
+          "data_type" : "STRING_LIST",
+          "description" : "List of visible quick actions",
+          "id" : "6bba7bf1-ef19-4071-b511-c1ab4d778626",
+          "name" : "available_actions",
+          "required" : true
+        },
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "bf073ba4-27b8-4b06-8e2a-b438a4a2a013",
+          "name" : "action_type",
+          "required" : true
+        },
+        {
+          "data_type" : "BOOLEAN",
+          "description" : "Whether the action was user-customized",
+          "id" : "f923eab3-72e3-4f88-b0a8-f65cfb08b998",
+          "name" : "is_customized",
+          "required" : false
+        }
+      ]
+    }
+  ],
+  "workspace" : "ios-demo"
+}

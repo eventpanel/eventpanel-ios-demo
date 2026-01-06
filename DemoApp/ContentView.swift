@@ -2,7 +2,7 @@ import SwiftUI
 import SafariServices
 
 struct ContentView: View {
-    @StateObject private var analyticsService = AnalyticsService.shared
+    @StateObject private var analyticsService = ConsoleAnalyticsService.shared
     @State private var showConsole = false
     @State private var showSourceCode = false
     

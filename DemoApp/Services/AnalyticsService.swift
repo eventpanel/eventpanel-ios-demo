@@ -1,8 +1,12 @@
 import Foundation
 import Combine
 
-class AnalyticsService: ObservableObject {
-    static let shared = AnalyticsService()
+protocol AnalyticsService {
+    func track(_ event: AnalyticsEvent)
+}
+
+class ConsoleAnalyticsService: ObservableObject, AnalyticsService {
+    static let shared = ConsoleAnalyticsService()
     
     @Published private(set) var eventHistory: [TrackedEvent] = []
     
