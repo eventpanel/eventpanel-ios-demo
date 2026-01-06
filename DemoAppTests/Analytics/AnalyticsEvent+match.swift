@@ -15,10 +15,22 @@ struct AnalyticsComparisonError: Error, CustomStringConvertible {
 
 struct ComparisonFailure: CustomStringConvertible {
     let path: String
+    let expected: String?
     let actual: String
 
     var description: String {
-        "❌ \(path) did not satisfy predicate\n   actual: \(actual)"
+        if let expected = expected {
+            return """
+            ❌ \(path) did not satisfy predicate
+               expected: \(expected)
+               actual:   \(actual)
+            """
+        } else {
+            return """
+            ❌ \(path) did not satisfy predicate
+               actual:   \(actual)
+            """
+        }
     }
 }
 
@@ -27,11 +39,11 @@ extension DemoApp.AnalyticsEvent {
     func match(_ expected: AnalyticsEvent) throws -> Bool {
         var failures: [ComparisonFailure] = []
 
-        // Name
         if name != expected.name {
             failures.append(
                 ComparisonFailure(
                     path: "name",
+                    expected: expected.name,
                     actual: name
                 )
             )
@@ -42,17 +54,19 @@ extension DemoApp.AnalyticsEvent {
                 failures.append(
                     ComparisonFailure(
                         path: "parameters.\(key)",
+                        expected: nil,
                         actual: "missing"
                     )
                 )
                 continue
             }
 
-            let predicate = expectedValue.asAnyPredicate()
+            let predicate = (expectedValue as? AnyPredicateConvertable)!.asAnyPredicate()
             if try !predicate.evaluate(actualValue) {
                 failures.append(
                     ComparisonFailure(
                         path: key,
+                        expected: predicate.description,
                         actual: "\(actualValue)"
                     )
                 )

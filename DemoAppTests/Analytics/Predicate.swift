@@ -1,10 +1,19 @@
 struct Predicate<Target> {
+    let description: String?
     let evaluate: (Target) throws -> Bool
 }
 
 extension Predicate where Target: Equatable {
+    init(evaluate: @escaping (Target) throws -> Bool) {
+        self.init(description: nil, evaluate: evaluate)
+    }
+}
+
+extension Predicate where Target: Equatable {
     init(_ value: Target) {
-        evaluate = { $0 == value }
+        self.init(description: "\(value)") {
+            $0 == value
+        }
     }
 }
 

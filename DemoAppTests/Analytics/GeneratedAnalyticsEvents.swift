@@ -178,10 +178,10 @@ extension AnalyticsEvents {
     }
 }
 
-private extension Dictionary where Value == AnyPredicateConvertable? {
+private extension Dictionary where Value == Any? {
   /// Returns dictionary with filtered out `nil` and `NSNull` values
-  func byExcludingNilValues() -> [Key: AnyPredicateConvertable] {
-    return compactMapValues { value -> AnyPredicateConvertable? in
+  func byExcludingNilValues() -> [Key: Any] {
+    return compactMapValues { value -> Any? in
       value is NSNull ? nil : value
     }
   }
@@ -189,9 +189,9 @@ private extension Dictionary where Value == AnyPredicateConvertable? {
 
 internal struct AnalyticsEvent {
   internal let name: String
-  internal let parameters: [String: AnyPredicateConvertable]
+  internal let parameters: [String: Any]
 
-  internal init(name: String, parameters: [String: AnyPredicateConvertable] = [:]) {
+  internal init(name: String, parameters: [String: Any] = [:]) {
     self.name = name
     self.parameters = parameters
   }
