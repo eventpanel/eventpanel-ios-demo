@@ -3,11 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0E9A42EA2DD5132900597CAE /* GeneratedAnalyticsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A42E92DD5132900597CAE /* GeneratedAnalyticsEvents.swift */; };
+		0EAB6B042F0D61750011B2B7 /* EventPanel.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 0EAB6B012F0D61750011B2B7 /* EventPanel.yaml */; };
+		0EAB6B052F0D61750011B2B7 /* AnalyticsEvent+match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB6AF72F0D61750011B2B7 /* AnalyticsEvent+match.swift */; };
+		0EAB6B062F0D61750011B2B7 /* AnyAnalyticsPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB6AF82F0D61750011B2B7 /* AnyAnalyticsPredicate.swift */; };
+		0EAB6B072F0D61750011B2B7 /* GeneratedAnalyticsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB6AF92F0D61750011B2B7 /* GeneratedAnalyticsEvents.swift */; };
+		0EAB6B082F0D61750011B2B7 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB6AFA2F0D61750011B2B7 /* Predicate.swift */; };
+		0EAB6B092F0D61750011B2B7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB6AFC2F0D61750011B2B7 /* ViewModel.swift */; };
+		0EAB6B0A2F0D61750011B2B7 /* MockAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB6AFE2F0D61750011B2B7 /* MockAnalyticsService.swift */; };
+		0EAB6B0B2F0D61750011B2B7 /* DemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAB6B002F0D61750011B2B7 /* DemoAppTests.swift */; };
 		5DAD289C4EEF4D4A9B34D9DE7300CBE1 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD289C4EEF4D4A9B34D9DE7300CBE0 /* AnalyticsService.swift */; };
 		A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D5 /* Colors.swift */; };
 		A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2 /* HeaderView.swift */; };
@@ -37,6 +45,14 @@
 		0E66FB072E72A0E70056CAA8 /* EventPanel.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = EventPanel.yaml; sourceTree = "<group>"; };
 		0E9A42E92DD5132900597CAE /* GeneratedAnalyticsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedAnalyticsEvents.swift; sourceTree = "<group>"; };
 		0EAB6AB52F0AE4A20011B2B7 /* DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EAB6AF72F0D61750011B2B7 /* AnalyticsEvent+match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnalyticsEvent+match.swift"; sourceTree = "<group>"; };
+		0EAB6AF82F0D61750011B2B7 /* AnyAnalyticsPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAnalyticsPredicate.swift; sourceTree = "<group>"; };
+		0EAB6AF92F0D61750011B2B7 /* GeneratedAnalyticsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedAnalyticsEvents.swift; sourceTree = "<group>"; };
+		0EAB6AFA2F0D61750011B2B7 /* Predicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predicate.swift; sourceTree = "<group>"; };
+		0EAB6AFC2F0D61750011B2B7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0EAB6AFE2F0D61750011B2B7 /* MockAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnalyticsService.swift; sourceTree = "<group>"; };
+		0EAB6B002F0D61750011B2B7 /* DemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppTests.swift; sourceTree = "<group>"; };
+		0EAB6B012F0D61750011B2B7 /* EventPanel.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = EventPanel.yaml; sourceTree = "<group>"; };
 		5DAD289C4EEF4D4A9B34D9DE7300CBE0 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6A7B8C9D0E1F2A3B4C5D5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1D2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -52,10 +68,6 @@
 		E5F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
 		F6A7B8C9D0E1F2A3B4C5D6E7F8A9B0C1 /* FloatingConsoleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingConsoleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		0EAB6AB62F0AE4A20011B2B7 /* DemoAppTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DemoAppTests; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0EAB6AB22F0AE4A20011B2B7 /* Frameworks */ = {
@@ -75,12 +87,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EAB6AFB2F0D61750011B2B7 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				0EAB6AF72F0D61750011B2B7 /* AnalyticsEvent+match.swift */,
+				0EAB6AF82F0D61750011B2B7 /* AnyAnalyticsPredicate.swift */,
+				0EAB6AF92F0D61750011B2B7 /* GeneratedAnalyticsEvents.swift */,
+				0EAB6AFA2F0D61750011B2B7 /* Predicate.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		0EAB6AFD2F0D61750011B2B7 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				0EAB6AFC2F0D61750011B2B7 /* ViewModel.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		0EAB6AFF2F0D61750011B2B7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0EAB6AFE2F0D61750011B2B7 /* MockAnalyticsService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		0EAB6B022F0D61750011B2B7 /* DemoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				0EAB6AFB2F0D61750011B2B7 /* Analytics */,
+				0EAB6AFD2F0D61750011B2B7 /* Example */,
+				0EAB6AFF2F0D61750011B2B7 /* Mocks */,
+				0EAB6B002F0D61750011B2B7 /* DemoAppTests.swift */,
+				0EAB6B012F0D61750011B2B7 /* EventPanel.yaml */,
+			);
+			path = DemoAppTests;
+			sourceTree = "<group>";
+		};
 		E00CD2792A435DDF005C9EDC = {
 			isa = PBXGroup;
 			children = (
 				0E66FB072E72A0E70056CAA8 /* EventPanel.yaml */,
 				E00CD2842A435DDF005C9EDC /* DemoApp */,
-				0EAB6AB62F0AE4A20011B2B7 /* DemoAppTests */,
+				0EAB6B022F0D61750011B2B7 /* DemoAppTests */,
 				E00CD2832A435DDF005C9EDC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -171,9 +222,6 @@
 			dependencies = (
 				0EAB6ABA2F0AE4A20011B2B7 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				0EAB6AB62F0AE4A20011B2B7 /* DemoAppTests */,
-			);
 			name = DemoAppTests;
 			packageProductDependencies = (
 			);
@@ -242,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAB6B042F0D61750011B2B7 /* EventPanel.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAB6B052F0D61750011B2B7 /* AnalyticsEvent+match.swift in Sources */,
+				0EAB6B062F0D61750011B2B7 /* AnyAnalyticsPredicate.swift in Sources */,
+				0EAB6B072F0D61750011B2B7 /* GeneratedAnalyticsEvents.swift in Sources */,
+				0EAB6B082F0D61750011B2B7 /* Predicate.swift in Sources */,
+				0EAB6B092F0D61750011B2B7 /* ViewModel.swift in Sources */,
+				0EAB6B0A2F0D61750011B2B7 /* MockAnalyticsService.swift in Sources */,
+				0EAB6B0B2F0D61750011B2B7 /* DemoAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

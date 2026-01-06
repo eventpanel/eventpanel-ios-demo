@@ -9,13 +9,4 @@ plugin:
     namespace: AnalyticsEvents
     documentation: true
 events:
-- id: vJYxYV2tXEZlGh3I9iB_I
-- id: 5oYkQpzYj-47TPVna3KtH
-- id: gEUfBDQlXGAMcOgYzQ98_
-- id: 4KYCSy_Dxo9im1342lj-q
-- id: c0A7K5TETHfyqBmlNgxzX
-- id: ReeBFYaGNMjcSAg5AWNZ6
-- id: 7x_C_nhcvdKoJezy8LRfq
 - id: CxjfQzKJoTblMNS6Dre16
-- id: V3IyudkmOanyBk_P6r7wd
-  version: 2

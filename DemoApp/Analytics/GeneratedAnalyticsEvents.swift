@@ -11,16 +11,16 @@ internal enum AnalyticsEvents {
     /// - Parameters:
     ///     - product_id: Unique product identifier
     internal static func addToCartTapped(  
+      selectedOptions: [Int],
       productId: String,
-      productPrice: String,
-      selectedOptions: [Int]
+      productPrice: String
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Add To Cart Tapped",
         parameters: [
+          "selected_options": selectedOptions,
           "product_id": productId,
-          "product_price": productPrice,
-          "selected_options": selectedOptions
+          "product_price": productPrice
         ]
       )
     }

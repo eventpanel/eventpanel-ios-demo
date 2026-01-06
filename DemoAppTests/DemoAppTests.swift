@@ -11,8 +11,8 @@ struct DemoAppTests {
         viewModel.buttonDidTap()
 
         let expectedEvent = AnalyticsEvents.ProductDetails.productViewed(
-            productId: "prod_13",
-            productPrice: Predicate {
+            productId: "prod_123",
+            productPrice: Predicate("more than 10") {
                 Decimal(string: String($0.dropFirst()))! > 10
             }
         )
