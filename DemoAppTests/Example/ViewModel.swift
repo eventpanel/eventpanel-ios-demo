@@ -1,10 +1,3 @@
-//
-//  ViewModel.swift
-//  DemoApp
-//
-//  Created by Sukhanov Evgenii on 04.01.2026.
-//
-
 @testable import DemoApp
 
 struct ViewModel {

@@ -1,10 +1,3 @@
-//
-//  MockAnalyticsService.swift
-//  DemoAppTests
-//
-//  Created by Auto on 16.12.2025.
-//
-
 import Foundation
 @testable import DemoApp
 
