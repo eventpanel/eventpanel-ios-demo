@@ -25,7 +25,7 @@ internal enum AnalyticsEvents {
       )
     }
 
-    /// riggered when a user enters the checkout flow
+    /// Triggered when a user enters the checkout flow
     internal static func checkoutStarted(  
       cartId: String?,
       cartValue: Float?,

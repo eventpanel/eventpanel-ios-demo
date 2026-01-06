@@ -103,7 +103,7 @@
       "category_ids" : [
         "eb79f655-6e75-45e3-92c3-b71a0185024f"
       ],
-      "description" : "riggered when a user enters the checkout flow",
+      "description" : "Triggered when a user enters the checkout flow",
       "id" : "gEUfBDQlXGAMcOgYzQ98_",
       "name" : "Checkout Started",
       "properties" : [
