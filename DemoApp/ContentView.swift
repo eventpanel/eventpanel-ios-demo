@@ -2,7 +2,7 @@ import SwiftUI
 import SafariServices
 
 struct ContentView: View {
-    @StateObject private var analyticsService = AnalyticsService.shared
+    @StateObject private var analyticsService = ConsoleAnalyticsService.shared
     @State private var showConsole = false
     @State private var showSourceCode = false
     
@@ -115,9 +115,9 @@ struct ContentView: View {
             }
             EventButtonView(label: "Add to Cart", badges: ["options[]"], variant: .purple) {
                 analyticsService.track(AnalyticsEvents.ProductDetails.addToCartTapped(
+                    selectedOptions: [1, 3, 5],
                     productId: "SKU-12345",
-                    productPrice: "$99.99",
-                    selectedOptions: [1, 3, 5]
+                    productPrice: "$99.99"
                 ))
             }
             EventButtonView(label: "Gallery Swiped", badges: ["index"], variant: .purple) {

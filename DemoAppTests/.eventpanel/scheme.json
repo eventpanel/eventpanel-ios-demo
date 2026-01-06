@@ -1,0 +1,37 @@
+{
+  "categories" : [
+    {
+      "description" : "Tracks user behavior on product detail screens",
+      "id" : "eb79f655-6e75-45e3-92c3-b71a0185024f",
+      "name" : "Product Details"
+    }
+  ],
+  "events" : [
+    {
+      "category_ids" : [
+        "eb79f655-6e75-45e3-92c3-b71a0185024f"
+      ],
+      "description" : "Triggered when a product detail screen is opened",
+      "id" : "CxjfQzKJoTblMNS6Dre16",
+      "name" : "Product Viewed",
+      "properties" : [
+        {
+          "data_type" : "STRING",
+          "description" : "Unique product identifier",
+          "id" : "2fbc50db-e19e-436e-9a73-4322a4c9bf98",
+          "name" : "product_id",
+          "required" : true
+        },
+        {
+          "data_type" : "STRING",
+          "description" : "",
+          "id" : "c6cfcb21-25bd-4e1f-b371-771ea849f883",
+          "name" : "product_price",
+          "required" : true
+        }
+      ]
+    }
+  ],
+  "hash" : "ab2a32e44a8da6224bc483a0710c09a278c2bb822805c4ac94d33201457301ee",
+  "workspace" : "ios-demo"
+}

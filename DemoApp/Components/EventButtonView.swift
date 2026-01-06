@@ -20,23 +20,26 @@ struct EventButtonView: View {
                 }
             }
         } label: {
-            HStack {
-                Text(label)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundColor(.epTextPrimary)
-                
-                Spacer()
-                
-                HStack(spacing: 6) {
-                    ForEach(badges, id: \.self) { badge in
-                        Text(badge)
-                            .font(.system(size: 11, weight: .medium, design: .monospaced))
-                            .foregroundColor(variant.color)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(variant.backgroundColor)
-                            .cornerRadius(6)
+            ViewThatFits {
+                HStack {
+                    TitleView(label: label)
+
+                    Spacer()
+
+                    HStack(spacing: 6) {
+                        ForEach(badges, id: \.self) { badge in
+                            BadgeView(badge: badge, variant: variant)
+                        }
+                    }
+                }
+
+                VStack(alignment: .leading) {
+                    TitleView(label: label)
+
+                    HStack(spacing: 6) {
+                        ForEach(badges, id: \.self) { badge in
+                            BadgeView(badge: badge, variant: variant)
+                        }
                     }
                 }
             }
@@ -54,6 +57,32 @@ struct EventButtonView: View {
             .scaleEffect(isPressed ? 0.98 : 1.0)
         }
         .buttonStyle(.plain)
+    }
+}
+
+private struct TitleView: View {
+    let label: String
+
+    var body: some View {
+        Text(label)
+            .font(.subheadline)
+            .fontWeight(.medium)
+            .foregroundColor(.epTextPrimary)
+    }
+}
+
+private struct BadgeView: View {
+    let badge: String
+    let variant: EventVariant
+
+    var body: some View {
+        Text(badge)
+            .font(.system(size: 11, weight: .medium, design: .monospaced))
+            .foregroundColor(variant.color)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(variant.backgroundColor)
+            .cornerRadius(6)
     }
 }
 

@@ -11,25 +11,25 @@ internal enum AnalyticsEvents {
     /// - Parameters:
     ///     - product_id: Unique product identifier
     internal static func addToCartTapped(  
-      selectedOptions: [Int],
-      productId: String,
-      productPrice: String
+      productId: Predicate<String>,
+      productPrice: Predicate<String>,
+      selectedOptions: Predicate<[Int]>
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Add To Cart Tapped",
         parameters: [
-          "selected_options": selectedOptions,
           "product_id": productId,
-          "product_price": productPrice
+          "product_price": productPrice,
+          "selected_options": selectedOptions
         ]
       )
     }
 
-    /// Triggered when a user enters the checkout flow
+    /// riggered when a user enters the checkout flow
     internal static func checkoutStarted(  
-      cartId: String?,
-      cartValue: Float?,
-      cartItems: [[String: Any]]?
+      cartId: Predicate<String>?,
+      cartValue: Predicate<Float>?,
+      cartItems: Predicate<[[String: Any]]>?
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Checkout Started",
@@ -43,7 +43,7 @@ internal enum AnalyticsEvents {
 
     /// Triggered when a user swipes through product images
     internal static func imageGallerySwiped(  
-      imageIndex: Int
+      imageIndex: Predicate<Int>
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Image Gallery Swiped",
@@ -57,8 +57,8 @@ internal enum AnalyticsEvents {
     /// - Parameters:
     ///     - product_id: Unique product identifier
     internal static func productViewed(  
-      productId: String,
-      productPrice: String
+      productId: Predicate<String>,
+      productPrice: Predicate<String>
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Product Viewed",
@@ -74,9 +74,9 @@ internal enum AnalyticsEvents {
 
     /// Triggered when the purchase is successfully completed
     internal static func checkoutCompleted(  
-      totalAmount: Int?,
-      orderSummary: String?,
-      orderId: String?
+      totalAmount: Predicate<Int>?,
+      orderSummary: Predicate<String>?,
+      orderId: Predicate<String>?
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Checkout Completed",
@@ -90,9 +90,9 @@ internal enum AnalyticsEvents {
 
     /// Triggered when a user selects a payment method
     internal static func paymentMethodSelected(  
-      paymentMetadata: [[String: Any]],
-      paymentMethod: PaymentMethod,
-      supportedMethods: [String]
+      paymentMetadata: Predicate<[[String: Any]]>,
+      paymentMethod: Predicate<PaymentMethod>,
+      supportedMethods: Predicate<[String]>
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Payment Method Selected",
@@ -113,9 +113,9 @@ internal enum AnalyticsEvents {
     ///     - banner_position: Position of the banner on the screen
     ///     - banner_id: Unique identifier of the banner
     internal static func homeBannerTapped(  
-      bannerMetadata: [String: Any],
-      bannerPosition: Int,
-      bannerId: String?
+      bannerMetadata: Predicate<[String: Any]>,
+      bannerPosition: Predicate<Int>,
+      bannerId: Predicate<String>?
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Home Banner Tapped",
@@ -132,9 +132,9 @@ internal enum AnalyticsEvents {
     ///     - screen_load_time_ms: Time taken to load the home screen
     ///     - entry_source: Source the user came from
     internal static func homeScreenViewed(  
-      activeExperiments: String?,
-      screenLoadTimeMs: Float?,
-      entrySource: EntrySource?
+      activeExperiments: Predicate<String>?,
+      screenLoadTimeMs: Predicate<Float>?,
+      entrySource: Predicate<EntrySource>?
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Home Screen Viewed",
@@ -151,9 +151,9 @@ internal enum AnalyticsEvents {
     ///     - available_actions: List of visible quick actions
     ///     - is_customized: Whether the action was user-customized
     internal static func quickActionTapped(  
-      availableActions: [String],
-      actionType: String,
-      isCustomized: Bool?
+      availableActions: Predicate<[String]>,
+      actionType: Predicate<String>,
+      isCustomized: Predicate<Bool>?
     ) -> AnalyticsEvent {
       AnalyticsEvent(
         name: "Quick Action Tapped",

@@ -46,6 +46,13 @@
       "name" : "Add To Cart Tapped",
       "properties" : [
         {
+          "data_type" : "INTEGER_LIST",
+          "description" : "",
+          "id" : "f5cfd84e-2cc6-4295-bdd6-99f5c504b392",
+          "name" : "selected_options",
+          "required" : true
+        },
+        {
           "data_type" : "STRING",
           "description" : "Unique product identifier",
           "id" : "2fbc50db-e19e-436e-9a73-4322a4c9bf98",
@@ -57,13 +64,6 @@
           "description" : "",
           "id" : "c6cfcb21-25bd-4e1f-b371-771ea849f883",
           "name" : "product_price",
-          "required" : true
-        },
-        {
-          "data_type" : "INTEGER_LIST",
-          "description" : "",
-          "id" : "f5cfd84e-2cc6-4295-bdd6-99f5c504b392",
-          "name" : "selected_options",
           "required" : true
         }
       ]
@@ -103,7 +103,7 @@
       "category_ids" : [
         "eb79f655-6e75-45e3-92c3-b71a0185024f"
       ],
-      "description" : "riggered when a user enters the checkout flow",
+      "description" : "Triggered when a user enters the checkout flow",
       "id" : "gEUfBDQlXGAMcOgYzQ98_",
       "name" : "Checkout Started",
       "properties" : [
@@ -296,5 +296,6 @@
       ]
     }
   ],
+  "hash" : "6df85e9b13844284b117e84cb1da0e92f52c48b7eab2c4226d228e139db22bb8",
   "workspace" : "ios-demo"
 }

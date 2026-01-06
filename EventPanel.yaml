@@ -2,15 +2,16 @@ workspaceId: 98996b91-79c2-4bfa-9339-f559615cf0d2
 source: iOS
 plugin:
   swiftgen:
-    shouldGenerateType: true
-    outputFilePath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     eventTypeName: AnalyticsEvent
-    namespace: AnalyticsEvents
+    outputFilePath: DemoApp/Analytics/GeneratedAnalyticsEvents.swift
     documentation: true
+    shouldGenerateType: true
+    namespace: AnalyticsEvents
 events:
 - id: vJYxYV2tXEZlGh3I9iB_I
 - id: 5oYkQpzYj-47TPVna3KtH
 - id: gEUfBDQlXGAMcOgYzQ98_
+  version: 2
 - id: 4KYCSy_Dxo9im1342lj-q
 - id: c0A7K5TETHfyqBmlNgxzX
 - id: ReeBFYaGNMjcSAg5AWNZ6
