@@ -5,17 +5,18 @@ import Testing
 struct DemoAppTests {
 
     @Test func testProductViewedEvent() async throws {
-        // Arrange
         let analyticsService = MockAnalyticsService()
         let viewModel = ViewModel(analyticsService: analyticsService)
 
         viewModel.buttonDidTap()
 
         let expectedEvent = AnalyticsEvents.ProductDetails.productViewed(
-            productId: Predicate { $0 == "prod_123" },
-            productPrice: Predicate { $0.contains("sdaads") }
+            productId: "prod_123",
+            productPrice: Predicate {
+                Decimal(string: String($0.dropFirst()))! > 10
+            }
         )
 
-        #expect(analyticsService.events == [expectedEvent])
+        #expect(try analyticsService.events[0].match(expectedEvent))
     }
 }
